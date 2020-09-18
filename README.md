@@ -36,6 +36,8 @@ You can set the output format to HTML using the `--format` option:
 php bin/hyperf.php dump-server --format=html > dump.html
 ```
 
+⚠️Do not use the `dd` method in your hyperf project, because it kills the Hyperf process, Use the `dump` method instead.
+
 ## Reference
 
 This extension package refers to the [laravel-dump-server](https://github.com/beyondcode/laravel-dump-server) package released by [beyondcode](https://github.com/beyondcode) organization

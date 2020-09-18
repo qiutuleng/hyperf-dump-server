@@ -36,6 +36,8 @@ php bin/hyperf.php dump-server
 php bin/hyperf.php dump-server --format=html > dump.html
 ```
 
+⚠️不要在 Hyperf 项目代码中使用 `dd` 方法，因为它会杀死 Hyperf 进程，使用 `dump` 方法替代它。
+
 ## 参考
 
 此扩展包参考自 [beyondcode](https://github.com/beyondcode) 组织的 [laravel-dump-server](https://github.com/beyondcode/laravel-dump-server) 扩展包。
