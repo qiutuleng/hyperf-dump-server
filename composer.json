@@ -1,0 +1,56 @@
+{
+    "name": "qiutuleng/hyperf-dump-server",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tuleng QIU",
+            "email": "qiutuleng@gmail.com",
+            "homepage": "https://github.com/qiutuleng"
+        }
+    ],
+    "homepage": "https://github.com/qiutuleng/hyperf-dump-server",
+    "keywords": [
+        "php",
+        "hyperf",
+        "dump-server"
+    ],
+    "description": "Bring Symfony's Var-Dump Server to Hyperf",
+    "autoload": {
+        "psr-4": {
+            "Qiutuleng\\HyperfDumpServer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=7.2",
+        "ext-swoole": ">=4.5",
+        "hyperf/framework": "2.0.*",
+        "hyperf/di": "2.0.*",
+        "symfony/var-dumper": "^5.0",
+        "hyperf/command": "~2.0.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.14",
+        "phpstan/phpstan": "^0.12",
+        "hyperf/testing": "2.0.*",
+        "swoole/ide-helper": "dev-master"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "co-phpunit -c phpunit.xml --colors=always",
+        "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
+        "cs-fix": "php-cs-fixer fix $1"
+    },
+    "extra": {
+        "hyperf": {
+            "config": "Qiutuleng\\HyperfDumpServer\\ConfigProvider"
+        }
+    }
+}
