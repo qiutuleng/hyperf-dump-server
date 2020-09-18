@@ -16,6 +16,12 @@ Under your project folder and run the command in terminal:
 composer require --dev qiutuleng/hyperf-dump-server
 ```
 
+Publish the `dump-server.php` configuration file using `vendor:publish` command :
+
+```bash
+php bin/hyperf.php vendor:publish qiutuleng/hyperf-dump-server
+```
+
 ## Usage
 
 Start the dump server by calling the hyperf command:

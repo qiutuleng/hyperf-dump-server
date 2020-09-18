@@ -16,6 +16,12 @@
 composer require --dev qiutuleng/hyperf-dump-server
 ```
 
+使用 `vendor:publish` 命令来复制 `dump-server.php` 配置文件：
+
+```bash
+php bin/hyperf.php vendor:publish qiutuleng/hyperf-dump-server
+```
+
 ## 使用
 
 使用 `hyperf` 的命令行，启动 `dump server` 服务：
