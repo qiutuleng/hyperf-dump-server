@@ -80,6 +80,6 @@ class DumpServerCommand extends Command
         $container = ApplicationContext::getContainer();
         $config = $container->get(ConfigInterface::class);
 
-        return new DumpServer($config->get('dump-server.host'));
+        return new DumpServer($config->get('dump-server.host', 'tcp://127.0.0.1:9912'));
     }
 }

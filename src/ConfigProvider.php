@@ -13,32 +13,23 @@ declare(strict_types=1);
 
 namespace Qiutuleng\HyperfDumpServer;
 
-use Qiutuleng\HyperfDumpServer\Commands\DumpServerCommand;
-use Qiutuleng\HyperfDumpServer\Listeners\DumpServerListener;
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\Contract\StdoutLoggerInterface;
 use Hyperf\Di\Container;
+use Qiutuleng\HyperfDumpServer\Commands\DumpServerCommand;
+use Qiutuleng\HyperfDumpServer\Listeners\DumpServerListener;
 
 class ConfigProvider
 {
     public function __invoke(): array
     {
         return [
-            'dependencies' => [
-            ],
             'commands' => [
                 DumpServerCommand::class,
             ],
             'listeners' => [
                 DumpServerListener::class,
             ],
-//            'annotations' => [
-//                'scan' => [
-//                    'paths' => [
-//                        __DIR__,
-//                    ],
-//                ],
-//            ],
             'publish' => [
                 [
                     'id' => 'config',
