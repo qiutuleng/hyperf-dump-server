@@ -31,7 +31,7 @@ class DumpServerListener implements ListenerInterface
     /**
      * @param OnStart $event
      */
-    public function process(object $event)
+    public function process(object $event): void
     {
         /** @var Container $container */
         $container = \Hyperf\Utils\ApplicationContext::getContainer();
