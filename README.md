@@ -8,6 +8,14 @@ This package will give you a dump server, that collects all your `dump` call out
 
 [中文文档 / Chinese document](./README-zh-CN.md)
 
+## Version Guide
+
+Hyperf Framework version is `2.2.25 and below`, please install version `1.2.x`.
+
+Hyperf Framework version is `2.2.26 and newer`, please install version `1.3.x`.
+
+Hyperf Framework version is `3.x and newer`, please install version `2.x`.
+
 ## Install
 
 Under your project folder and run the command in terminal:
