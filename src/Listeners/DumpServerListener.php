@@ -17,6 +17,7 @@ use Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider;
 use Symfony\Component\VarDumper\Server\Connection;
 use Symfony\Component\VarDumper\Server\DumpServer;
 use Symfony\Component\VarDumper\VarDumper;
+use Hyperf\Context\ApplicationContext;
 
 class DumpServerListener implements ListenerInterface
 {
@@ -34,7 +35,7 @@ class DumpServerListener implements ListenerInterface
     public function process(object $event): void
     {
         /** @var Container $container */
-        $container = \Hyperf\Utils\ApplicationContext::getContainer();
+        $container = ApplicationContext::getContainer();
         $config = $container->get(ConfigInterface::class);
         $host = $config->get('dump-server.host', 'tcp://127.0.0.1:9912');
         $container->set(DumpServer::class, function () use ($host) {
