@@ -6,8 +6,6 @@ namespace Qiutuleng\HyperfDumpServer\Commands;
 
 use Hyperf\Command\Command;
 use Hyperf\Contract\ConfigInterface;
-use Hyperf\Contract\StdoutLoggerInterface;
-use Hyperf\Di\Container;
 use Hyperf\Context\ApplicationContext;
 use InvalidArgumentException;
 use Symfony\Component\Console\Style\SymfonyStyle;
@@ -76,7 +74,6 @@ class DumpServerCommand extends Command
 
     protected function getServer(): DumpServer
     {
-        /** @var Container $container */
         $container = ApplicationContext::getContainer();
         $config = $container->get(ConfigInterface::class);
 

@@ -8,9 +8,8 @@ use Hyperf\HttpMessage\Uri\Uri;
 use Hyperf\HttpServer\Request;
 use Hyperf\HttpServer\Router\Dispatched;
 use Hyperf\Context\Context;
-use Hyperf\Utils\Str;
+use Hyperf\Stringable\Str;
 use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Message\UriInterface;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\ContextProvider\ContextProviderInterface;
 

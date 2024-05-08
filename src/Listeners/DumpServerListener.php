@@ -8,7 +8,6 @@ use Hyperf\Contract\ConfigInterface;
 use Hyperf\Di\Container;
 use Hyperf\Event\Contract\ListenerInterface;
 use Hyperf\Framework\Event\AfterWorkerStart;
-use Hyperf\Framework\Event\BeforeWorkerStart;
 use Hyperf\Framework\Event\OnStart;
 use Hyperf\HttpServer\Request;
 use Qiutuleng\HyperfDumpServer\Dumper;

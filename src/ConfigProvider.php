@@ -13,9 +13,6 @@ declare(strict_types=1);
 
 namespace Qiutuleng\HyperfDumpServer;
 
-use Hyperf\Contract\ConfigInterface;
-use Hyperf\Contract\StdoutLoggerInterface;
-use Hyperf\Di\Container;
 use Qiutuleng\HyperfDumpServer\Commands\DumpServerCommand;
 use Qiutuleng\HyperfDumpServer\Listeners\DumpServerListener;
 
