@@ -1,5 +1,7 @@
 <?php
 
+use function Hyperf\Support\env;
+
 return [
     /*
      * The host to use when listening for debug server connections.
