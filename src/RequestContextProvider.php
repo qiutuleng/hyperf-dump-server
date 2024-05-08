@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace Qiutuleng\HyperfDumpServer;
 
+use Hyperf\Coroutine\Coroutine;
 use Hyperf\HttpMessage\Uri\Uri;
 use Hyperf\HttpServer\Request;
 use Hyperf\HttpServer\Router\Dispatched;
@@ -25,7 +26,7 @@ class RequestContextProvider implements ContextProviderInterface
     /**
      * The variable cloner.
      *
-     * @var \Symfony\Component\VarDumper\Cloner\VarCloner
+     * @var VarCloner
      */
     private $cloner;
 
@@ -56,7 +57,7 @@ class RequestContextProvider implements ContextProviderInterface
             'uri' => $this->getUri(),
             'method' => $this->currentRequest->getMethod(),
             'controller' => $this->getController(),
-            'identifier' => \Hyperf\Utils\Coroutine::inCoroutine()
+            'identifier' => Coroutine::inCoroutine()
                 ? spl_object_hash(Context::get(ServerRequestInterface::class))
                 : Str::random(), // TODO: 非协程模式下，暂时未找到合适的唯一对象，先用随机数代替，缺陷是每次都会执行$io->section
         ];
@@ -92,7 +93,14 @@ class RequestContextProvider implements ContextProviderInterface
             $callback = $this->transformRouteArrayAction($callback);
         }
 
-        return $this->cloner->cloneVar(class_basename($callback));
+        return $this->cloner->cloneVar(
+            basename(
+                str_replace(
+                    '\\',
+                    '/',
+                    (is_object($callback) ? get_class($callback) : $callback))
+            )
+        );
     }
 
     protected function transformRouteArrayAction(array $action): string
