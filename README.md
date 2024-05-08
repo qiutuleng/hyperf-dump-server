@@ -14,7 +14,9 @@ Hyperf Framework version is `2.2.25 and below`, please install version `1.2.x`.
 
 Hyperf Framework version is `2.2.26 and newer`, please install version `1.3.x`.
 
-Hyperf Framework version is `3.x and newer`, please install version `2.x`.
+Hyperf Framework version is `3.0.x`, please install version `2.0.x`.
+
+Hyperf Framework version is `3.1 and newer`, please install version `2.1.x`.
 
 ## Install
 
