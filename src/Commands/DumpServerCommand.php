@@ -30,7 +30,7 @@ class DumpServerCommand extends Command
      */
     protected $server;
 
-    public function __construct(string $name = null)
+    public function __construct(?string $name = null)
     {
         parent::__construct($name);
 
